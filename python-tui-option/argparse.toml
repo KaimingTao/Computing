@@ -1,0 +1,32 @@
+[parser]
+prog = "argparse-demo"
+description = "Demo CLI built entirely from a TOML argparse schema."
+
+[[arguments]]
+flags = ["--version"]
+action = "version"
+version = "argparse-demo 1.0.0"
+
+[[arguments]]
+flags = ["--name"]
+type = "str"
+default = "TOML user"
+help = "Name to greet."
+
+[[arguments]]
+flags = ["--count"]
+type = "int"
+default = 2
+help = "How many greetings to print."
+
+[[arguments]]
+flags = ["--mode"]
+choices = ["quiet", "normal", "debug"]
+default = "debug"
+help = "Output mode."
+
+[[arguments]]
+flags = ["--enabled"]
+action = "BooleanOptionalAction"
+default = true
+help = "Enable or disable the demo feature."
