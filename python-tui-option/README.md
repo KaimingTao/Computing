@@ -78,6 +78,35 @@ Supported schema keys in `build_parser.py` currently include:
 - `metavar`
 - `dest`
 
+## click demo
+
+This project also includes a `click` version that builds the command from
+`click.toml`.
+
+Run with the default schema:
+
+```bash
+python build_parse_click.py
+```
+
+Override values from the command line:
+
+```bash
+python build_parse_click.py --name Alice --count 3 --mode quiet
+```
+
+Load a different TOML command schema:
+
+```bash
+python build_parse_click.py custom.toml
+```
+
+Show the built-in version flag:
+
+```bash
+python build_parse_click.py --version
+```
+
 | Tool       | Type             | Best for                   | Pros                                                                                     | Cons                                               | Use today?                |
 | ---------- | ---------------- | -------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------- | ------------------------- |
 | `argparse` | Built-in         | Normal Python CLI scripts  | No install, supports positional args, optional args, flags, types, defaults, subcommands | Verbose for large apps                             | Yes, recommended standard |

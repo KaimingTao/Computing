@@ -1,0 +1,33 @@
+[command]
+prog = "click-demo"
+description = "Demo CLI built entirely from a TOML click schema."
+
+[[options]]
+flags = ["--version"]
+version = "click-demo 1.0.0"
+help = "Show the version and exit."
+show_default = false
+
+[[options]]
+flags = ["--name"]
+type = "str"
+default = "TOML user"
+help = "Name to greet."
+
+[[options]]
+flags = ["--count"]
+type = "int"
+default = 2
+help = "How many greetings to print."
+
+[[options]]
+flags = ["--mode"]
+choices = ["quiet", "normal", "debug"]
+default = "debug"
+help = "Output mode."
+
+[[options]]
+flags = ["--enabled/--no-enabled"]
+is_flag = true
+default = true
+help = "Enable or disable the demo feature."
